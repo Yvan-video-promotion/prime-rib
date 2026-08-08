@@ -1,0 +1,150 @@
+@import "tailwindcss" source("../");
+
+/*
+  Ember & Bone — a dark supper-club palette. Warm near-blacks, ember orange,
+  oxblood and brass. Nothing here is pure black or pure white.
+*/
+@theme {
+  --color-char: #13100e;
+  --color-char-deep: #0d0b09;
+  --color-surface: #1c1613;
+  --color-surface-2: #241c18;
+  --color-line: #382c25;
+  --color-ember: #c2571f;
+  --color-ember-soft: #e08b4c;
+  --color-rare: #9e2b25;
+  --color-brass: #c7a248;
+  --color-bone: #f4eadd;
+  --color-smoke: #a8988c;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Karla", "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-char);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-char);
+    color: var(--color-bone);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-char);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ember-soft);
+    outline-offset: 3px;
+  }
+}
+
+/* Fraunces is variable — lean on the optical size and the "wonk" axis so the
+   display type has some hand-set character instead of reading as a web default. */
+.font-display {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 30, "WONK" 1, "opsz" 120;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--color-smoke);
+}
+
+/* Fine film grain over the whole document. Fixed and non-interactive so it
+   never repaints while scrolling. */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.28;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* Warm haze behind the hero and the calculator readout. */
+.ember-glow {
+  background:
+    radial-gradient(
+      62% 48% at 22% 12%,
+      rgba(194, 87, 31, 0.22) 0%,
+      rgba(194, 87, 31, 0) 68%
+    ),
+    radial-gradient(
+      54% 44% at 88% 74%,
+      rgba(158, 43, 37, 0.2) 0%,
+      rgba(158, 43, 37, 0) 70%
+    );
+}
+
+.hairline {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-line) 12%,
+    var(--color-line) 88%,
+    transparent
+  );
+}
+
+/* Staggered entrance for the hero. One choreographed load beats scattered
+   micro-animations. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes sweep {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.sweep {
+  transform-origin: left;
+  animation: sweep 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .sweep {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Tabular numerals keep the calculator readout from jittering as values change. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
