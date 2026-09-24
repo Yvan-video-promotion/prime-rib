@@ -84,12 +84,12 @@ function SiteHeader() {
             Roast calculator
           </Link>
           <a
-            href={site.etsyUrl}
+            href={site.downloadUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-ember px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-char transition-transform hover:-translate-y-0.5 hover:bg-ember-soft active:translate-y-0"
           >
-            Get the book
+            Get the recipe PDF
           </a>
         </nav>
       </div>

@@ -1,7 +1,6 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 
 import EtsyButton from '../components/EtsyButton'
-import { site } from '../lib/site'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -260,14 +259,6 @@ function CalculatorBand() {
               </li>
             ))}
           </ul>
-          <div className="mt-10">
-            <Link
-              to="/calculator"
-              className="inline-flex items-center gap-3 rounded-full bg-ember px-7 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-char transition-all duration-300 hover:-translate-y-0.5 hover:bg-ember-soft"
-            >
-              Open the calculator
-            </Link>
-          </div>
         </div>
 
         <div className="lg:col-span-6 lg:pl-6">
@@ -484,7 +475,7 @@ function ClosingCta() {
           the good knife.
         </p>
         <div className="mt-10 flex justify-center">
-          <EtsyButton>Get {site.name} on Etsy</EtsyButton>
+          <EtsyButton>Visit yvanvideopromotion</EtsyButton>
         </div>
       </div>
     </section>

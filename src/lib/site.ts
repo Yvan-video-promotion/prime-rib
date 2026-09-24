@@ -8,6 +8,8 @@ export const site = {
   tagline: 'The Prime Rib Method',
   /** The Etsy listing every buy button points at. */
   etsyUrl: 'https://www.etsy.com/listing/4544070417',
+  /** Where the recipe PDF download buttons point. */
+  downloadUrl: 'https://www.yvanvideopromotion.info/pho-bo-recipe-digital-download-web-app',
   description:
     'A slow-roasted, hand-carved, roadhouse-style prime rib guide: 24-hour dry brine, low-and-slow roast, high-heat finish and bone-broth au jus — plus an interactive Roast Calculator.',
 } as const
