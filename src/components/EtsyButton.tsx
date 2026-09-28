@@ -11,7 +11,7 @@ interface EtsyButtonProps {
  * book page in a new tab.
  */
 export default function EtsyButton({
-  children = 'Get the recipe',
+  children = 'Get the recipe book',
   variant = 'solid',
   className = '',
 }: EtsyButtonProps) {
