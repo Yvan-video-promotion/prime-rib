@@ -1,7 +1,6 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 
 import EtsyButton from '../components/EtsyButton'
-import { site } from '../lib/site'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -13,7 +12,6 @@ function Home() {
       <Hero />
       <SpecStrip />
       <Method />
-      <CalculatorBand />
       <Included />
       <Access />
       <Notices />
@@ -84,10 +82,10 @@ function Hero() {
         >
           <div className="relative overflow-hidden rounded-[2rem] border border-line/80 shadow-[0_50px_90px_-40px_rgba(0,0,0,0.95)]">
             <img
-              src="/images/roast-hero.jpg"
-              alt="A herb-crusted standing rib roast on a dark platter, ringed with roasted carrots, potatoes and onion"
-              width={1000}
-              height={664}
+              src="/images/family-dinner.jpg"
+              alt="A family gathered around the dinner table with a carved prime rib roast"
+              width={1600}
+              height={900}
               className="h-full w-full object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-char via-char/25 to-transparent" />
@@ -190,10 +188,10 @@ function Method() {
 
               <figure className="mt-10 overflow-hidden rounded-2xl border border-line/80">
                 <img
-                  src="/images/roast-crust.jpg"
-                  alt="A whole roasted rib of beef resting on a board, its surface deeply browned and crusted"
-                  width={1280}
-                  height={747}
+                  src="/images/seasoning.jpg"
+                  alt="A raw prime rib roast being seasoned with coarse salt and herbs"
+                  width={1600}
+                  height={900}
                   loading="lazy"
                   className="h-full w-full object-cover"
                 />
@@ -227,81 +225,6 @@ function Method() {
         </div>
       </div>
     </section>
-  )
-}
-
-function CalculatorBand() {
-  return (
-    <section className="relative overflow-hidden border-y border-line/70 bg-surface/50 ember-glow">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-12 lg:py-24">
-        <div className="lg:col-span-6">
-          <p className="eyebrow">Included with your purchase</p>
-          <h2 className="mt-5 font-display text-4xl leading-[1.05] text-bone sm:text-5xl">
-            The interactive
-            <br />
-            Roast Calculator
-          </h2>
-          <p className="mt-6 max-w-lg leading-relaxed text-smoke">
-            Enter the weight of your roast and how you like it cooked. You get
-            back a full oven schedule counted backwards from the moment you want
-            to sit down — pull temperature, estimated duration, and the exact
-            time the roast goes in.
-          </p>
-          <ul className="mt-8 space-y-3 text-sm text-smoke">
-            {[
-              'Your personalised oven schedule, hour by hour',
-              'The recommended pull temperature for your doneness',
-              'Approximate cooking duration for your weight',
-              'The exact clock time to put the roast in the oven',
-            ].map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-10">
-            <Link
-              to="/calculator"
-              className="inline-flex items-center gap-3 rounded-full bg-ember px-7 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-char transition-all duration-300 hover:-translate-y-0.5 hover:bg-ember-soft"
-            >
-              Open the calculator
-            </Link>
-          </div>
-        </div>
-
-        <div className="lg:col-span-6 lg:pl-6">
-          <div className="rounded-[1.75rem] border border-line bg-char-deep/80 p-7 shadow-[0_40px_80px_-40px_rgba(0,0,0,0.9)]">
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.24em] text-smoke">
-              Sample plan · 7.5 lb bone-in · medium rare
-            </p>
-            <div className="mt-6 grid grid-cols-2 gap-5">
-              <Readout label="Pull at" value="122°F" />
-              <Readout label="Time in oven" value="3 hr 55 min" />
-              <Readout label="Oven in" value="1:17 pm" />
-              <Readout label="On the table" value="6:00 pm" />
-            </div>
-            <div className="mt-7 h-px hairline" />
-            <p className="mt-5 text-xs leading-relaxed text-smoke">
-              Ovens and cuts vary. Times are estimates — internal temperature is
-              the dependable measure for any beef roast, so keep a calibrated
-              instant-read thermometer nearby.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function Readout({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <p className="text-[0.65rem] uppercase tracking-[0.2em] text-smoke">
-        {label}
-      </p>
-      <p className="mt-1.5 font-mono text-2xl text-ember-soft tnum">{value}</p>
-    </div>
   )
 }
 
@@ -342,10 +265,10 @@ function Included() {
             </h2>
             <figure className="mt-10 overflow-hidden rounded-2xl border border-line/80">
               <img
-                src="/images/roast-plated.jpg"
-                alt="A thick cut of rare prime rib plated in a steakhouse, with a gravy boat of au jus and horseradish alongside"
-                width={1280}
-                height={960}
+                src="/images/family-seasoning.jpg"
+                alt="A family seasoning a prime rib roast together in their kitchen"
+                width={1600}
+                height={900}
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
@@ -464,7 +387,7 @@ function ClosingCta() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/images/roast-crust.jpg"
+          src="/images/into-the-oven.jpg"
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -484,7 +407,7 @@ function ClosingCta() {
           the good knife.
         </p>
         <div className="mt-10 flex justify-center">
-          <EtsyButton>Get {site.name} on Etsy</EtsyButton>
+          <EtsyButton>Get the cookbook PDF on yvanvideopromotion</EtsyButton>
         </div>
       </div>
     </section>
