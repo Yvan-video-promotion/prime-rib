@@ -61,8 +61,8 @@ server and only mounts its children after the `useEffect` that reads
 `localStorage`. If you ever render the calculator outside the gate, move the
 date initialisation into an effect.
 
-**Shop-specific strings live only in `src/lib/site.ts`.** The Etsy URL appears in
-the header, several page sections and the footer, but always via `site.etsyUrl`
+**Shop-specific strings live only in `src/lib/site.ts`.** The cookbook URL appears in
+the header, several page sections and the footer, but always via `site.bookUrl`
 or the `EtsyButton` component. Never hard-code it.
 
 **Photography is CC-licensed and the footer credit is a licence obligation.** If
