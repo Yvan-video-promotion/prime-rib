@@ -7,7 +7,7 @@ Context for AI agents working on this codebase.
 A one-product marketing site for a digital prime rib recipe book sold on Etsy,
 with a gated interactive Roast Calculator as the "premium" feature the listing
 promises. There is no checkout here — every conversion path leads off-site to
-the Etsy listing.
+the recipe book page (`site.bookUrl`).
 
 Built with TanStack Start (React 19 + TanStack Router), Vite 7, Tailwind CSS 4,
 and Netlify Database via Drizzle ORM. Deployed on Netlify.
@@ -19,7 +19,7 @@ db/
   schema.ts                  # Drizzle schema — the `members` table
   index.ts                   # Drizzle client bound to the Netlify DB adapter
 netlify/database/migrations/ # Generated SQL; Netlify applies these on deploy
-public/images/               # Roast photography (CC-licensed, credited in footer)
+public/images/               # Roast photography supplied by the shop owner
 src/
   components/
     AccessGate.tsx           # Email unlock wrapper for the calculator
@@ -27,7 +27,7 @@ src/
     RoastCalculator.tsx      # Inputs + readout + timeline
   lib/
     roast.ts                 # All cooking maths; pure, no React, no I/O
-    site.ts                  # Shop name, tagline, Etsy URL
+    site.ts                  # Shop name, tagline, recipe book URL
   routes/
     __root.tsx               # HTML shell, fonts, header, footer, 404
     index.tsx                # Landing page (sections are local components)
@@ -61,13 +61,14 @@ server and only mounts its children after the `useEffect` that reads
 `localStorage`. If you ever render the calculator outside the gate, move the
 date initialisation into an effect.
 
-**Shop-specific strings live only in `src/lib/site.ts`.** The Etsy URL appears in
-the header, several page sections and the footer, but always via `site.etsyUrl`
-or the `EtsyButton` component. Never hard-code it.
+**Shop-specific strings live only in `src/lib/site.ts`.** The recipe book URL
+appears in the header, several page sections and the footer, but always via
+`site.bookUrl` or the `EtsyButton` component. Never hard-code it.
 
-**Photography is CC-licensed and the footer credit is a licence obligation.** If
-images in `public/images/` are replaced, update the credits block in
-`src/routes/__root.tsx`.
+**Photography is supplied by the shop owner**, one image per topic (dinner,
+dry brine, oven, recipe guide, carving). If CC-licensed images are ever added
+back, a credit in the footer of `src/routes/__root.tsx` becomes a licence
+obligation.
 
 ## Conventions
 

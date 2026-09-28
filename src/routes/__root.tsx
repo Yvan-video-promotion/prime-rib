@@ -19,7 +19,7 @@ export const Route = createRootRoute({
       { property: 'og:title', content: `${site.name} — ${site.tagline}` },
       { property: 'og:description', content: site.description },
       { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: '/images/roast-hero.jpg' },
+      { property: 'og:image', content: '/images/family-dinner.jpg' },
     ],
     links: [
       { rel: 'icon', href: '/favicon.ico' },
@@ -84,7 +84,7 @@ function SiteHeader() {
             Roast calculator
           </Link>
           <a
-            href={site.etsyUrl}
+            href={site.bookUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-ember px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-char transition-transform hover:-translate-y-0.5 hover:bg-ember-soft active:translate-y-0"
@@ -111,48 +111,18 @@ function SiteFooter() {
               the guide brings a little steakhouse confidence to your table.
             </p>
             <a
-              href={site.etsyUrl}
+              href={site.bookUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-full border border-ember/60 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] text-ember-soft transition-colors hover:bg-ember hover:text-char"
             >
-              View the listing on Etsy
+              Get the cookbook PDF
             </a>
           </div>
 
           <div className="text-xs leading-relaxed text-smoke">
-            <p className="eyebrow mb-3">Photography</p>
+            <p className="eyebrow mb-3">A note on timing</p>
             <p>
-              Roast photographs by Sharon Chen (
-              <a
-                className="underline decoration-line underline-offset-2 hover:text-bone"
-                href="https://creativecommons.org/licenses/by/2.0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                CC BY 2.0
-              </a>
-              ), P1898 (
-              <a
-                className="underline decoration-line underline-offset-2 hover:text-bone"
-                href="https://creativecommons.org/licenses/by/4.0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                CC BY 4.0
-              </a>
-              ) and GRALISTAIR (
-              <a
-                className="underline decoration-line underline-offset-2 hover:text-bone"
-                href="https://creativecommons.org/licenses/by-sa/4.0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                CC BY-SA 4.0
-              </a>
-              ), via Wikimedia Commons.
-            </p>
-            <p className="mt-4">
               Cooking times are estimates. Always confirm doneness with a
               calibrated instant-read thermometer and follow current food-safety
               guidance for beef.

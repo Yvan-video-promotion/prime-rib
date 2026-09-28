@@ -6,8 +6,8 @@ export const site = {
   name: 'Ember & Bone',
   /** Sits under the name in the header. */
   tagline: 'The Prime Rib Method',
-  /** The Etsy listing every buy button points at. */
-  etsyUrl: 'https://www.etsy.com/listing/4544070417',
+  /** The page every buy button points at. */
+  bookUrl: 'https://www.yvanvideopromotion.info/prime-rib-recipe-ebook',
   description:
     'A slow-roasted, hand-carved, roadhouse-style prime rib guide: 24-hour dry brine, low-and-slow roast, high-heat finish and bone-broth au jus — plus an interactive Roast Calculator.',
 } as const
