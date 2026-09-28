@@ -7,11 +7,11 @@ interface EtsyButtonProps {
 }
 
 /**
- * The single conversion point of the site. Every one of these opens the Etsy
- * listing in a new tab.
+ * The single conversion point of the site. Every one of these opens the recipe
+ * book page in a new tab.
  */
 export default function EtsyButton({
-  children = 'Get the recipe book on Etsy',
+  children = 'Get the recipe',
   variant = 'solid',
   className = '',
 }: EtsyButtonProps) {
@@ -25,7 +25,7 @@ export default function EtsyButton({
 
   return (
     <a
-      href={site.etsyUrl}
+      href={site.bookUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={`${base} ${styles} ${className}`}
